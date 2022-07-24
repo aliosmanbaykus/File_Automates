@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jul 16 01:53:50 2022
-
-@author: ASUS
+@author: aliosmanbaykus
 """
-# You should put this file into your directory that you want to store .jpg files
 
 from PIL import Image
 import os
 
 # Add your Path here that is include your jfif file
 
-directory = r'PATH'
+directory = r'PATH that includes .jfif extended files'
+save_directory = r'Path that you want to save your .jpeg extended files'
 c=1
 for filename in os.listdir(directory):
     
@@ -19,7 +17,7 @@ for filename in os.listdir(directory):
         im = Image.open(os.path.join(directory, filename))
         name='img'+str(c)+'.jpg'
         rgb_im = im.convert('RGB')
-        rgb_im.save(name)
+        rgb_im.save(os.path.join(save_directory, name))
         c+=1
         print(os.path.join(directory, filename))
         continue
